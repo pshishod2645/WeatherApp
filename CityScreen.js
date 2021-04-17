@@ -15,7 +15,7 @@ export default function App({navigation, route}) {
     <MapView region = {{latitude : city.coord.lat, longitude : city.coord.lon, latitudeDelta:1, longitudeDelta: 1} } style= {{flex : 2}} >
         <Marker coordinate = {{latitude : city.coord.lat, longitude : city.coord.lon}} title = {city.name}/>
     </MapView>
-      <View style = {{flex : 1, flexDirection: 'row'}}> 
+      <View style = {{flex : 1, flexDirection: 'row', paddingLeft: 10}}> 
         <View style = {{flex : 1}}> 
             <Text style = {styles.titleText}>{ city.name } </Text> 
             <Text>{ city.weather[0].main }</Text> 

@@ -24,14 +24,14 @@ export default function App({navigation}) {
 
   for(let city of cities){
     citiesView.push(
-      <TouchableHighlight  key = {city.id} onPress = {() => navigation.navigate('City', {city: city})} > 
-        <View style = {{flexDirection: 'row', borderWidth: 1, marginBottom: 2}}>
+      <TouchableHighlight  activeOpacity = {0.9} underlayColor ='#DDDDDD' key = {city.id} onPress = {() => navigation.navigate('City', {city: city})} > 
+        <View style = {{flexDirection: 'row', borderWidth: 1, marginBottom: 2, paddingVertical: 10, paddingHorizontal: 10}}>
           <View style = {{ flex : 1}}> 
-            <Text>{city.name}</Text> 
+            <Text style = {{fontSize: 18}}>{city.name}</Text> 
             <Text>{city.weather[0].main}</Text> 
           </View> 
-          <View style = {{flex : 1, justifyContent: 'flex-end', alignItems: 'center'}}> 
-          <Text>{ city.main.temp }</Text> 
+          <View style = {{flex : 1, justifyContent: 'center', alignItems: 'flex-end',}}> 
+          <Text style = {{fontSize: 24}}>{ city.main.temp }</Text> 
           </View>
         </View> 
       </TouchableHighlight>
