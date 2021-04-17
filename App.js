@@ -1,12 +1,20 @@
-import * as React from 'react';
+import React, {useEffect} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
 import CityScreen from './CityScreen';
+import {askPermission, scheduleNotification} from './Notifications'; 
 
 const Stack = createStackNavigator();
 
 export default function(){
+  useEffect( async () => {
+    async function doIt(){
+        await scheduleNotification(); 
+    }
+    doIt(); 
+  }, ); 
+  // scheduleNotification(); 
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,5 +33,5 @@ export default function(){
           })}/>
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
+  )
+}
